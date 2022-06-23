@@ -1,6 +1,6 @@
 package com.mpc;
 
-public class VarargsToGenericArrayFailure {
+public class VarargsToGenericArray {
 
     /**
      * 该方法将
