@@ -20,7 +20,11 @@ public class VarargsToGenericArrayFailure {
     public static void main(String[] args) {
         try {
             String[] strArr = two("A", "B");
-            System.out.println(strArr.length);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        try {
+            String[] strArr = toArray("A", "B");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
