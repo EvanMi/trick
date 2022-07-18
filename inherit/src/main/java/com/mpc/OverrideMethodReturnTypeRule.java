@@ -1,10 +1,19 @@
 package com.mpc;
 
+import java.lang.reflect.Method;
+
 public class OverrideMethodReturnTypeRule {
     public static void main(String[] args) {
-        ObjectReturnClass objectReturnClass = new FujiReturnClass();
-        Object o = objectReturnClass.returnValue();
-        System.out.println(o instanceof Fuji);
+//        ObjectReturnClass objectReturnClass =
+//                new FujiReturnClass();
+//        Object o = objectReturnClass.returnValue();
+//        System.out.println(o instanceof Fuji);
+
+        Method[] declaredMethods = FujiReturnClass.class.getDeclaredMethods();
+        for (Method declaredMethod : declaredMethods) {
+            System.out.println(declaredMethod.getName());
+            System.out.println(declaredMethod.getReturnType());
+        }
     }
 }
 

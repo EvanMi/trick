@@ -7,6 +7,12 @@ class RootException extends Exception {}
 
 class ChildException extends  RootException {}
 
+class AnotherChildException extends RootException{}
+
+class GrandsonException extends ChildException{}
+
+class AnotherGrandsonException extends AnotherChildException{}
+
 
 class RootExceptionClass {
     public void doThrow() throws RootException {
@@ -35,6 +41,31 @@ class NoExceptionClass extends RootExceptionClass{
 //    }
 //}
 
+
+class AllChildrenExceptionClass extends RootExceptionClass {
+    @Override
+    public void doThrow() throws ChildException, AnotherChildException {
+        long now = System.nanoTime();
+        if (now % 2 == 0) {
+            throw new ChildException();
+        } else {
+            throw new AnotherChildException();
+        }
+    }
+}
+
+class AllGrandsonExceptionClass extends AllChildrenExceptionClass {
+    @Override
+    public void doThrow() throws GrandsonException, AnotherGrandsonException {
+    }
+}
+
+
+class OneGrandsonExceptionClass extends AllChildrenExceptionClass {
+    @Override
+    public void doThrow() throws GrandsonException {
+    }
+}
 
 class RootRuntimeException extends RuntimeException {}
 
