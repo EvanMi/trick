@@ -6,15 +6,24 @@ import java.util.List;
 public class WildCardToT {
 
 
-    public static <T> void tMethod(List<T> list) {
-        T l0 = list.get(0);
-        T l1 = list.get(1);
-        list.set(1, l0);
-        list.set(0, l1);
+    public static <T> void tMethod(List<T> list, int i, int j) {
+        T l0 = list.get(i);
+        T l1 = list.get(j);
+        list.set(j, l0);
+        list.set(i, l1);
     }
 
-    public static void wildCardMethod(List<?> list) {
-        tMethod(list);
+
+
+
+
+
+
+
+    public static void wildCardMethod(List<?> list, int i, int j) {
+        Object o0 = list.get(0);
+        Object o1 = list.get(1);
+        //tMethod(list, i, j);
     }
 
 
@@ -22,6 +31,7 @@ public class WildCardToT {
         List<String> aList = new ArrayList<>();
         aList.add("0");
         aList.add("1");
-        wildCardMethod(aList);
+        wildCardMethod(aList, 0, 1);
     }
+
 }

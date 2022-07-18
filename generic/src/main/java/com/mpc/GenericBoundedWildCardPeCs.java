@@ -129,7 +129,7 @@ public class GenericBoundedWildCardPeCs {
 
 
     public static void testComparatorConsumer() {
-        Comparator<Object> objectComparator = new Comparator<>() {
+        Comparator<Object> objectComparator = new Comparator<Object>() {
             @Override
             public int compare(Object o1, Object o2) {
                 return 1;
@@ -142,7 +142,7 @@ public class GenericBoundedWildCardPeCs {
         };
         comparatorConsumer(objectComparator);
 
-        Comparator<Fruit> fruitComparator = new Comparator<>() {
+        Comparator<Fruit> fruitComparator = new Comparator<Fruit>() {
             @Override
             public int compare(Fruit o1, Fruit o2) {
                 if (o1.getWeight() > o2.getWeight()) {
@@ -161,7 +161,7 @@ public class GenericBoundedWildCardPeCs {
         };
         comparatorConsumer(fruitComparator);
 
-        Comparator<Apple> appleComparator = new Comparator<>() {
+        Comparator<Apple> appleComparator = new Comparator<Apple>() {
             @Override
             public int compare(Apple o1, Apple o2) {
                 if (o1.getWeight() > o2.getWeight()) {
@@ -180,7 +180,7 @@ public class GenericBoundedWildCardPeCs {
         };
         comparatorConsumer(appleComparator);
 
-        Comparator<Fuji> fujiComparator = new Comparator<>() {
+        Comparator<Fuji> fujiComparator = new Comparator<Fuji>() {
             @Override
             public int compare(Fuji o1, Fuji o2) {
                 if (o1.getWeight() > o2.getWeight()) {
@@ -199,7 +199,7 @@ public class GenericBoundedWildCardPeCs {
         };
         comparatorConsumer(fujiComparator);
 
-        Comparator<GeDaGouFuji> geDaGouFujiComparator = new Comparator<>() {
+        Comparator<GeDaGouFuji> geDaGouFujiComparator = new Comparator<GeDaGouFuji>() {
             @Override
             public int compare(GeDaGouFuji o1, GeDaGouFuji o2) {
                 if (o1.getWeight() > o2.getWeight()) {
