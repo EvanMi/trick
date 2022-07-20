@@ -1,5 +1,8 @@
 package com.mpc;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class GenericUsageSummary {
 
 
@@ -65,6 +68,7 @@ public class GenericUsageSummary {
             return r;
         }
     }
+
     static class MultiUpperBoundLimitedGenericDefineDemo <T extends Fruit & Eatable & Colorable> {
 
         public Fruit toFruit(T t) {
@@ -93,6 +97,11 @@ public class GenericUsageSummary {
         protected abstract T getT(T t);
     }
 
+    //                         泛型定义                    泛型使用
+    //                           |                         |
+    //                           |                         |
+    //                           |                         |
+    //                           ↓                         ↓
     static class SubGenericDemo<R> extends RootGenericDemo<R> {
         @Override
         protected R getT(R r) {
@@ -115,6 +124,36 @@ public class GenericUsageSummary {
         }
     }
 
+    //
+    static class ComplexUpperBoundLimitedGenericDefineDemo <T extends Comparable<? super T>> extends RootGenericDemo<T> {
+        @Override
+        protected T getT(T t) {
+            return null;
+        }
+    }
+
     /**use generic to declare variable 声明泛型变量*/
+    static class DeclareGenericVariableDemo {
+
+        //看方法的内部
+        public void toolManMethod() {
+            //声明一个具体的String类型的list
+            List<String> strList;
+            //声明一个下界为String类型的wildcard list
+            List<? super String> superStrList;
+            //声明一个上界为String类型的wildcard list
+            List<? extends String> extendsStrList;
+            //声明一个没有任何界定的list
+            List<?> wildcardList;
+
+            List<? extends Comparable<? super ArrayList<? super String>>> complexList;
+        }
+
+
+        
+
+    }
+
     /**use generic to create object 创建泛型对象*/
+
 }
