@@ -150,9 +150,32 @@ public class GenericUsageSummary {
         }
 
 
+        public static List<? super Apple> getListSuperApple(List<? super Fruit> list) {
+            return list;
+        }
 
+        public static List<? extends Fruit> getListExtendsFruit(List<? extends Apple> list) {
+            return list;
+        }
+
+
+        public static void main(String[] args) {
+
+            // getListSuperApple将可放入到list中的对象由Fruit的子类，具体到了Apple的子类
+            List<Fruit> fruits = new ArrayList<>();
+            List<? super Apple> listSuperApple = getListSuperApple(fruits);
+            listSuperApple.add(new Apple());
+            listSuperApple.add(new Fuji());
+
+
+            // getListExtendsFruit将可从list中获取的对象从Apple的子类，泛化到了Fruit的子类
+            List<Apple> apples= new ArrayList<>();
+            List<? extends Fruit> listExtendsFruit = getListExtendsFruit(apples);
+            Fruit fruit = listExtendsFruit.get(0);
+        }
 
     }
+
 
     /**use generic to create object 创建泛型对象*/
 
