@@ -9,13 +9,11 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>class-mvn</artifactId>
-
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <classifier>default</classifier>
     </properties>
-
     <profiles>
         <profile>
             <id>class1</id>
@@ -30,7 +28,6 @@
             </properties>
         </profile>
     </profiles>
-
     <build>
         <plugins>
             <plugin>

@@ -18,11 +18,11 @@
 
 
     <dependencies>
-        <dependency>
-            <groupId>org.mpc</groupId>
-            <artifactId>class-mvn</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <classifier>class1</classifier>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.mpc</groupId>-->
+<!--            <artifactId>class-mvn</artifactId>-->
+<!--            <version>1.0-SNAPSHOT</version>-->
+<!--            <classifier>class1</classifier>-->
+<!--        </dependency>-->
     </dependencies>
 </project>

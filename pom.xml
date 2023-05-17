@@ -17,11 +17,10 @@
         <module>generic</module>
         <module>scope</module>
         <module>inherit</module>
-<<<<<<< HEAD
-=======
         <module>base</module>
         <module>class-mvn</module>
->>>>>>> aa7c243 (a)
+        <module>yumi-processor-handler</module>
+        <module>yumi-processor-demo</module>
     </modules>
 
 </project>
